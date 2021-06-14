@@ -14,7 +14,7 @@
         <img src="~/assets/profile_picture.png" alt="profile-picture" />
       </div>
       <div class="flex flex-col text-left justify-center">
-        <h2 class="font-sans font-semibold text-lg text-gray-800">Marlina</h2>
+        <h2 class="font-sans font-semibold text-lg text-gray-800">Akbar</h2>
         <p class="font-sans font-normal text-xm text-gray-600">
           Telah membuat status
         </p>
