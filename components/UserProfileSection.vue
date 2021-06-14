@@ -20,9 +20,13 @@
         <!-- user information -->
         <div class="w-full flex flex-col">
           <!-- user name  -->
-          <h1 class="font-semibold text-xl text-gray-800">Akbar</h1>
+          <h1 class="font-semibold text-xl text-gray-800">
+            {{ getUserById(1).username }}
+          </h1>
           <!-- user bio  -->
-          <h3 class="font-normal text-gray-600">Lorem, ipsum.</h3>
+          <h3 class="font-normal text-gray-600">
+            {{ getUserById(1).userBio }}
+          </h3>
           <!-- edit button  -->
           <button
             class="
@@ -41,16 +45,20 @@
           <!-- user post, followers, following  -->
           <div class="w-full my-4 grid grid-flow-row grid-cols-3 gap-4 px-3">
             <div class="rounded-md bg-white">
-              <h3 class="font-semibold text-gray-800">10</h3>
+              <h3 class="font-semibold text-gray-800">4</h3>
               <p class="text-gray-600">Post</p>
             </div>
             <div class="rounded-md bg-white">
-              <h3 class="font-semibold text-gray-800">10</h3>
-              <p class="text-gray-600">Post</p>
+              <h3 class="font-semibold text-gray-800">
+                {{ getUserById(1).userFollowing.length }}
+              </h3>
+              <p class="text-gray-600">Following</p>
             </div>
             <div class="rounded-md bg-white">
-              <h3 class="font-semibold text-gray-800">10</h3>
-              <p class="text-gray-600">Post</p>
+              <h3 class="font-semibold text-gray-800">
+                {{ getUserById(1).userFollowers.length }}
+              </h3>
+              <p class="text-gray-600">Followers</p>
             </div>
           </div>
           <!-- user galery  -->
@@ -87,7 +95,28 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+
+export default {
+  data() {
+    return {
+      // profileUrl: '',
+    }
+  },
+  computed: {
+    ...mapGetters(['getUserById']),
+    profileUrl() {
+      return this.getUserById(this.status.statusId).profileUrl
+    },
+    initials() {
+      const x = this.getUserById(this.status.statusId).username
+
+      return x.charAt(0)
+    },
+  },
+
+  methods: {},
+}
 </script>
 
 <style scoped>

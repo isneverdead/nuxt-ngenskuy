@@ -13,8 +13,12 @@
         "
       >
         <!-- user friend list  -->
-        <UserMessageFriend />
-        <UserMessageFriend />
+        <div v-for="n in getAllFriend[0].friendList" :key="n">
+          <div @click="toggleCurrentChat(n)">
+            <UserMessageFriend :friend-id="n" />
+          </div>
+        </div>
+        <!-- <UserMessageFriend /> -->
         <!-- user friend list  -->
       </div>
       <div class="flex flex-col w-2/3">
@@ -23,23 +27,38 @@
             class="
               w-16
               h-16
-              mr-5
               overflow-hidden
+              flex flex-row
+              items-center
+              justify-center
+              text-center
               border-white border-4
               rounded-full
+              bg-red-400
+              mr-5
             "
           >
-            <img src="~/assets/profile_picture.png" alt="profile-picture" />
+            <h1 class="text-4xl font-sans text-white font-bold uppercase">
+              {{ initials }}
+            </h1>
+            <!-- <img :src="profileUrl" alt="profile-picture" /> -->
+            <!-- <img src="~/assets/profile_picture.png" alt="profile-picture" /> -->
           </div>
-          <h2 class="font-sans font-semibold text-xl text-gray-800">Akbar</h2>
+          <h2 class="font-sans font-semibold text-xl text-gray-800">
+            {{ getUserById(currentChat).username }}
+          </h2>
         </div>
         <!-- chat section  -->
-        <div class="w-full overflow-y-scroll h-full flex flex-col p-5">
+        <div
+          v-for="n in listChat"
+          :key="n"
+          class="w-full overflow-y-scroll h-full flex flex-col p-5"
+        >
           <!-- left chat  -->
-          <UserChat :is-sender="false" />
+          <UserChat :is-sender="currentChat != n.userReceiverId" />
 
           <!-- right chat  -->
-          <UserChat :is-sender="true" />
+          <!-- <UserChat :is-sender="true" /> -->
         </div>
         <!-- chat section  -->
 
@@ -66,11 +85,36 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      isUser: true,
+      currentChat: 1,
+      // isSidebarOpen: !true,
+      listChat: [],
     }
+  },
+  computed: {
+    ...mapGetters(['getAllChat']),
+    ...mapGetters(['getAllFriend']),
+    ...mapGetters(['getUserById']),
+
+    initials() {
+      const x = this.getUserById(this.currentChat).username
+
+      return x.charAt(0)
+    },
+  },
+
+  methods: {
+    // ...mapMutations(['toggleCurrentChat']),
+    toggleCurrentChat(id) {
+      // eslint-disable-next-line no-console
+      console.log(id)
+      this.listChat = []
+      this.currentChat = id
+      this.listChat = this.getAllChat
+    },
   },
 }
 </script>

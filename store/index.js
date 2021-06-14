@@ -1,13 +1,14 @@
 export const state = () => ({
   isUser: true,
   sidebarOpenStatus: false,
+  currentChatTo: 1,
   users: [
     {
       userId: 1,
       profileUrl: '~/assets/profile_picture.png',
       username: 'akbar',
       password: '1234',
-      userBio: '',
+      userBio: 'Hello my name is akbar',
       userFollowers: [2, 3, 4],
       userFollowing: [2, 3, 4],
       likeId: [1],
@@ -100,6 +101,10 @@ export const mutations = {
   toggleSidebar(state) {
     state.sidebarOpenStatus = !state.sidebarOpenStatus
   },
+
+  toggleCurrentChat(state, id) {
+    state.currentChatTo = id
+  },
 }
 
 export const getters = {
@@ -110,8 +115,13 @@ export const getters = {
   getAllStatus: (state) => state.status,
 
   getAllChat: (state) => state.chat,
+  // getAllChat: (state) => (id) => {
+  //   return state.chat.find((chat) => chat.userSenderId === id)
+  // },
 
   getAllFriend: (state) => state.message,
 
   isSidebarOpen: (state) => state.sidebarOpenStatus,
+
+  currentChat: (state) => state.currentChatTo,
 }

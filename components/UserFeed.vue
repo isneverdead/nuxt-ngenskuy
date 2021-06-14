@@ -5,10 +5,24 @@
     >
       <div class="flex flex-col text-left items-start w-1/3">
         <div
-          class="w-24 h-24 overflow-hidden border-white border-4 rounded-full"
+          class="
+            w-24
+            h-24
+            overflow-hidden
+            flex flex-row
+            items-center
+            justify-center
+            text-center
+            border-white border-4
+            rounded-full
+            bg-red-400
+          "
         >
+          <h1 class="text-4xl font-sans text-white font-bold uppercase">
+            {{ initials }}
+          </h1>
           <!-- <img :src="profileUrl" alt="profile-picture" /> -->
-          <img src="~/assets/profile_picture.png" alt="profile-picture" />
+          <!-- <img src="~/assets/profile_picture.png" alt="profile-picture" /> -->
         </div>
         <h2 class="font-sans font-semibold text-lg text-gray-800">
           {{ getUserById(status.statusId).username }}
@@ -98,6 +112,11 @@ export default {
     ...mapGetters(['getUserById']),
     profileUrl() {
       return this.getUserById(this.status.statusId).profileUrl
+    },
+    initials() {
+      const x = this.getUserById(this.status.statusId).username
+
+      return x.charAt(0)
     },
   },
 
