@@ -16,12 +16,6 @@
       <!-- user sugestion followers  -->
     </div>
     <!-- body  -->
-
-    <div class="flex flex-row">
-      <NuxtLink class="mx-2" to="/">Home page</NuxtLink>
-      <NuxtLink class="mx-2" to="/login">Login page</NuxtLink>
-      <NuxtLink class="mx-2" to="/signup">Sign up page</NuxtLink>
-    </div>
   </div>
 </template>
 

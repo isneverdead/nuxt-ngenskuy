@@ -10,11 +10,18 @@
             h-32
             mx-auto
             overflow-hidden
+            flex flex-row
+            items-center
+            justify-center
+            text-center
             border-white border-4
             rounded-full
+            bg-red-400
           "
         >
-          <img src="~/assets/profile_picture.png" alt="profile-picture" />
+          <h1 class="text-4xl font-sans text-white font-bold uppercase">A</h1>
+          <!-- <img :src="profileUrl" alt="profile-picture" /> -->
+          <!-- <img src="~/assets/profile_picture.png" alt="profile-picture" /> -->
         </div>
         <!-- profile picture  -->
         <!-- user information -->

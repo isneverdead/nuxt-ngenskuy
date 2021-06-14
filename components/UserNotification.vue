@@ -5,16 +5,27 @@
         class="
           w-24
           h-24
-          mr-10
+          mr-3
           overflow-hidden
+          flex flex-row
+          items-center
+          justify-center
+          text-center
           border-white border-4
           rounded-full
+          bg-red-400
         "
       >
-        <img src="~/assets/profile_picture.png" alt="profile-picture" />
+        <h1 class="text-4xl font-sans text-white font-bold uppercase">
+          {{ initial }}
+        </h1>
+        <!-- <img :src="profileUrl" alt="profile-picture" /> -->
+        <!-- <img src="~/assets/profile_picture.png" alt="profile-picture" /> -->
       </div>
       <div class="flex flex-col text-left justify-center">
-        <h2 class="font-sans font-semibold text-lg text-gray-800">Akbar</h2>
+        <h2 class="font-sans font-semibold text-lg text-gray-800">
+          {{ name }}
+        </h2>
         <p class="font-sans font-normal text-xm text-gray-600">
           Telah membuat status
         </p>
@@ -26,7 +37,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    name: {
+      type: String,
+      default: '',
+    },
+    initial: {
+      type: String,
+      default: '',
+    },
+  },
+}
 </script>
 
 <style scoped>
