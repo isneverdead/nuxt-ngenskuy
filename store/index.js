@@ -2,6 +2,7 @@ export const state = () => ({
   isUser: true,
   sidebarOpenStatus: false,
   currentChatTo: 1,
+  currentPage: 'home',
   users: [
     {
       userId: 1,
@@ -105,6 +106,12 @@ export const mutations = {
   toggleCurrentChat(state, id) {
     state.currentChatTo = id
   },
+
+  setCurrentPage(state, id) {
+    // eslint-disable-next-line no-console
+    console.log(id)
+    state.currentPage = id
+  },
 }
 
 export const getters = {
@@ -124,4 +131,5 @@ export const getters = {
   isSidebarOpen: (state) => state.sidebarOpenStatus,
 
   currentChat: (state) => state.currentChatTo,
+  currentPageIs: (state) => state.currentPage,
 }

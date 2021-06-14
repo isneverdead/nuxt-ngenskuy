@@ -20,17 +20,34 @@
           <img src="~/assets/close_sidebar_icon.svg" alt="close-icon" />
         </div>
       </div>
-      <h1 class="font-sans font-semibold text-xl text-gray-800">Home</h1>
+      <NuxtLink to="/" class="font-sans font-semibold text-xl text-gray-800"
+        >Home</NuxtLink
+      >
       <div class="h-1 my-3 rounded-md bg-white"></div>
-      <h1 class="font-sans font-semibold text-xl text-gray-800">
+      <NuxtLink
+        to="/notification"
+        class="font-sans font-semibold text-xl text-gray-800"
+      >
         Notification
-      </h1>
+      </NuxtLink>
       <div class="h-1 my-3 rounded-md bg-white"></div>
-      <h1 class="font-sans font-semibold text-xl text-gray-800">Messages</h1>
+      <NuxtLink
+        to="/message"
+        class="font-sans font-semibold text-xl text-gray-800"
+        >Messages</NuxtLink
+      >
       <div class="h-1 my-3 rounded-md bg-white"></div>
-      <h1 class="font-sans font-semibold text-xl text-gray-800">About Us</h1>
+      <NuxtLink
+        to="/about"
+        class="font-sans font-semibold text-xl text-gray-800"
+        >About Us</NuxtLink
+      >
       <div class="h-1 my-3 rounded-md bg-white"></div>
-      <h1 class="font-sans font-semibold text-xl text-gray-800">Log out</h1>
+      <NuxtLink
+        to="/login"
+        class="font-sans font-semibold text-xl text-gray-800"
+        >Log out</NuxtLink
+      >
       <div class="h-1 my-3 rounded-md bg-white"></div>
     </div>
   </div>

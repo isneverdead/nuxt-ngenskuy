@@ -11,28 +11,34 @@
     <div v-if="isUser" class="hidden lg:flex flex-row items-center">
       <NuxtLink
         to="/"
-        class="
-          font-sans
-          cursor-pointer
-          font-semibold
-          text-xl
-          mr-16
-          hover:text-gray-700
-        "
+        :class="['navlink', currentPageIs == 'home' ? 'font-semibold' : '']"
+        @click="setCurrentPage('home')"
       >
         Home
       </NuxtLink>
       <NuxtLink
         to="/notification"
-        class="font-sans cursor-pointer text-xl mr-16 hover:text-gray-700"
+        :class="[
+          'navlink',
+          currentPageIs == 'notification' ? 'font-semibold' : '',
+        ]"
+        @click="setCurrentPage('notification')"
       >
         Notification
       </NuxtLink>
       <NuxtLink
         to="/message"
-        class="font-sans cursor-pointer text-xl mr-16 hover:text-gray-700"
+        :class="['navlink', currentPageIs == 'message' ? 'font-semibold' : '']"
+        @click="setCurrentPage('message')"
       >
         Messages
+      </NuxtLink>
+      <NuxtLink
+        to="/about"
+        :class="['navlink', currentPageIs == 'about' ? 'font-semibold' : '']"
+        @click="setCurrentPage('about')"
+      >
+        About us
       </NuxtLink>
     </div>
     <div v-if="isUser" class="hidden lg:flex flex-row items-center">
@@ -104,13 +110,15 @@ export default {
   },
   computed: {
     ...mapGetters(['isSidebarOpen']),
+    ...mapGetters(['currentPageIs']),
     getUser() {
       return this.$store.state.sidebarOpenStatus
     },
   },
   methods: {
     ...mapActions(['toggleSideba']),
-    ...mapMutations(['toggleSidebar']),
+    ...mapMutations(['toggleSidebar', 'setCurrentPage']),
+    // ...mapMutations([]),
     hhhh() {
       // eslint-disable-next-line no-console
       console.log('akbar')
@@ -121,6 +129,10 @@ export default {
 </script>
 
 <style scoped>
+.navlink {
+  @apply font-sans cursor-pointer text-xl mr-16 hover:text-gray-700;
+}
+
 .button-shadow {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
