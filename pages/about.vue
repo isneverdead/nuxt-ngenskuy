@@ -4,17 +4,18 @@
     <div
       class="
         w-full
-        px-28
+        px-10
+        lg:px-28
         pt-5
-        grid grid-flow-row grid-cols-2
-        lg:grid-cols-2
-        gap-10
+        grid grid-flow-row grid-cols-1
+        lg:grid-cols-2 lg:gap-10
         relative
+        gap-5
       "
     >
       <img class="logo" src="~/assets/logo-ngenskuy.svg" alt="ngenskuy-logo" />
       <div class="flex flex-row">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center mr-5">
           <div
             class="
               w-24
@@ -39,7 +40,7 @@
             Front end Dev
           </h1>
         </div>
-        <div class="flex flex-col text-start items-start">
+        <div class="flex flex-col text-left items-start">
           <h1 class="font-sans text-lg font-semibold text-gray-800">
             Fariz Akbar S
           </h1>
@@ -51,7 +52,7 @@
       </div>
       <!-- profile 2 -->
       <div class="flex flex-row">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center mr-5">
           <div
             class="
               w-24
@@ -74,7 +75,7 @@
             Back end Dev
           </h1>
         </div>
-        <div class="flex flex-col text-start items-start">
+        <div class="flex flex-col text-left items-start">
           <h1 class="font-sans text-lg font-semibold text-gray-800">
             Bachtiar Yusuf
           </h1>
@@ -109,7 +110,7 @@
             UI design
           </h1>
         </div>
-        <div class="flex flex-col text-start items-start">
+        <div class="flex flex-col text-left items-start">
           <h1 class="font-sans text-lg font-semibold text-gray-800">
             Ahmad Nurhidayat
           </h1>
@@ -144,14 +145,12 @@
             UX design
           </h1>
         </div>
-        <div class="flex flex-col text-start items-start">
+        <div class="flex flex-col text-left items-start">
           <h1 class="font-sans text-lg font-semibold text-gray-800">
             Alfi Henan Atthaturk
           </h1>
           <h1 class="font-sans text-gray-800">18.01.53.0068</h1>
-          <a href="https://www.instagram.com/neahn_/"
-            >https://www.instagram.com/neahn_/</a
-          >
+          <a href="https://www.instagram.com/neahn_/">instagram.com/neahn_</a>
         </div>
       </div>
     </div>

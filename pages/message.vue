@@ -5,7 +5,8 @@
       <div
         class="
           flex flex-col
-          w-1/3
+          w-full
+          lg:w-1/3
           px-2
           pt-5
           rounded-l-xl rounded-bl-xl
@@ -15,13 +16,14 @@
         <!-- user friend list  -->
         <div v-for="n in getAllFriend[0].friendList" :key="n">
           <div @click="toggleCurrentChat(n)">
+            <!-- {{ n }} -->
             <UserMessageFriend :friend-id="n" />
           </div>
         </div>
         <!-- <UserMessageFriend /> -->
         <!-- user friend list  -->
       </div>
-      <div class="flex flex-col w-2/3">
+      <div class="hidden lg:flex flex-col w-2/3">
         <div class="w-full flex flex-row px-5 py-2 items-center bg-gray-400">
           <div
             class="
@@ -121,7 +123,7 @@ export default {
 
 <style scoped>
 .canvas {
-  @apply w-full flex flex-col text-center px-16 pt-5;
+  @apply w-full flex flex-col text-center px-5 lg:px-16 pt-5;
 
   height: 85vh;
   background-color: #f2f2f2;
