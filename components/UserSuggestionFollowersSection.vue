@@ -27,6 +27,7 @@
           <div class="flex flex-col justify-center items-center text-center">
             <h2 class="font-sans font-semibold text-xl">Bachtiar</h2>
             <button
+              v-if="followed"
               class="
                 button-shadow button-green
                 mx-auto
@@ -35,7 +36,25 @@
                 rounded-2xl
                 text-white
                 font-bold font-sans
+                cursor-pointer
               "
+              @click="toggleFollow"
+            >
+              Followed
+            </button>
+            <button
+              v-else
+              class="
+                button-shadow button-green
+                mx-auto
+                px-7
+                py-1
+                rounded-2xl
+                text-white
+                font-bold font-sans
+                cursor-pointer
+              "
+              @click="toggleFollow"
             >
               Follow
             </button>
@@ -50,7 +69,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      followed: false,
+    }
+  },
+  methods: {
+    toggleFollow() {
+      this.followed = !this.followed
+    },
+  },
+}
 </script>
 
 <style scoped>

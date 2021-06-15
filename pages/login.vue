@@ -30,19 +30,22 @@
               type="password"
             />
           </div>
-          <button
-            class="
-              button-shadow button-login
-              mx-auto
-              px-7
-              py-2
-              rounded-md
-              text-white
-              font-bold font-sans
-            "
-          >
-            Log In
-          </button>
+          <NuxtLink to="/">
+            <button
+              class="
+                button-shadow button-login
+                mx-auto
+                px-7
+                py-2
+                rounded-md
+                text-white
+                font-bold font-sans
+              "
+            >
+              Log In
+            </button>
+          </NuxtLink>
+
           <!-- or -->
           <div class="relative h-1 mx-3 bg-white rounded-lg my-5">
             <div class="absolute -top-3 left-0 right-0">
@@ -53,19 +56,22 @@
           </div>
           <!-- or -->
           <!-- Sign Up button  -->
-          <button
-            class="
-              button-shadow button-signup
-              mx-auto
-              px-5
-              py-2
-              mb-10
-              rounded-md
-              font-bold font-sans
-            "
-          >
-            Sign Up
-          </button>
+          <NuxtLink to="/signup">
+            <button
+              class="
+                button-shadow button-signup
+                mx-auto
+                px-5
+                py-2
+                mb-10
+                rounded-md
+                font-bold font-sans
+              "
+            >
+              Sign Up
+            </button>
+          </NuxtLink>
+
           <!-- Sign Up button  -->
         </div>
       </div>

@@ -39,19 +39,22 @@
           </div>
 
           <!-- Sign Up button  -->
-          <button
-            class="
-              button-shadow button-signup
-              mx-auto
-              px-5
-              py-2
-              mb-10
-              rounded-md
-              font-bold font-sans
-            "
-          >
-            Sign Up
-          </button>
+          <NuxtLink to="/login">
+            <button
+              class="
+                button-shadow button-signup
+                mx-auto
+                px-5
+                py-2
+                mb-10
+                rounded-md
+                font-bold font-sans
+              "
+            >
+              Sign Up
+            </button>
+          </NuxtLink>
+
           <!-- Sign Up button  -->
         </div>
       </div>

@@ -107,7 +107,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      // profileUrl: '',
+      followed: false,
     }
   },
   computed: {

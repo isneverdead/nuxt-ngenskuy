@@ -83,7 +83,7 @@ export default {
   @apply fixed z-10 w-full flex h-screen top-0 bg-transparent;
 
   transition: 1s;
-  right: -1000px;
+  right: -1000rem;
 }
 
 .sidebar-background {
